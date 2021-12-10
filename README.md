@@ -3,7 +3,7 @@
 This is repo is mainly to keep track of examples of using Regex for various tasks.
 
 
-## Using SED to in place of cut
+## Using SED in place of cut
 
 Had a list of MITRE Attack techniques used accross a few attacks that were documented in (thedfirreport)[https://thedfirreport.com/] and I wanted to just list out hte Unique techniques. So immediatly I think that I should go with the every handey "cat file | sort | uniq" but potentialy due to the way I had entered the data it wasn't working for me. So I decided to try SED which I've used in the past but I always seem to struggle with much more then when using other implementatinos of regex. This is almost certainly a user issue.
 
