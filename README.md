@@ -8,7 +8,7 @@ This is repo is mainly to keep track of examples of using Regex for various task
 Had a list of MITRE Attack techniques used accross a few attacks that were documented in (thedfirreport)[https://thedfirreport.com/] and I wanted to just list out hte Unique techniques. So immediatly I think that I should go with the every handey "cat file | sort | uniq" but potentialy due to the way I had entered the data it wasn't working for me. So I decided to try SED which I've used in the past but I always seem to struggle with much more then when using other implementatinos of regex. This is almost certainly a user issue.
 
 Data looks like so:
-
+```
 $ cat dfirreports.txt
 OS Credential Dumping – T1003
 SMB/Windows Admin Shares – T1021.002
@@ -23,7 +23,7 @@ File and Directory Discovery – T1083
 Access Token Manipulation – T1134
 Network Share Discovery – T1135
 Domain Trust Discovery – T1482
-
+```
 There are some basic MITRE Att&ck techniqes as well as sub techniques.   I would like to extract the main technique and subtechnique if it exists in order sort.
 
 I like to use [https://regex101.com/] with some TLP white sample data to test out my regex statement.
