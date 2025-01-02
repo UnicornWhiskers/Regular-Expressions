@@ -5,7 +5,7 @@ This is repo is mainly to keep track of examples of using Regex for various task
 
 ## Using SED in place of cut
 
-Had a list of MITRE Attack techniques used accross a few attacks that were documented in (thedfirreport)[https://thedfirreport.com/] and I wanted to just list out hte Unique techniques. So immediatly I think that I should go with the every handey "cat file | sort | uniq" but potentialy due to the way I had entered the data it wasn't working for me. So I decided to try SED which I've used in the past but I always seem to struggle with much more then when using other implementatinos of regex. This is almost certainly a user issue.
+Had a list of MITRE Attack techniques used accross a few attacks that were documented in (thedfirreport)[https://thedfirreport.com/] and I wanted to just list out the unique techniques. This is using the SED CLI command which I've sturggled with in the past.  
 
 Data looks like so:
 ```
@@ -44,7 +44,7 @@ For the subtechnique
 
 \.[0-9]{3}
 
-But to make this optional I need to put this into a capture group (in brackets) and followed by the question mark (?) which indicates teh preceeding group shoudl match zero or more times.
+But to make this optional I need to put this into a capture group (in brackets) and followed by the question mark (?) which indicates the preceeding group should match zero or more times.
 
 So that should look like:
 
@@ -62,7 +62,7 @@ dfirreport1.txt: ASCII text
 
 T[0-9]{4}(\.[0-9]{3})?$
 
-Testing this againts my test string in Regex101.com I get the following:
+Testing this against my test string in Regex101.com I get the following:
 ```
 match 1: T1000.001
 group 1: .001
@@ -76,7 +76,7 @@ Which looks good.  now testing with another string without the sub technique
 $ echo "this is my second test string - T1000" | sed -r 's/T[0-9]{4}(\.[0-9]{3})?$//'
 this is my second test string -
 ```
-This also appears to be working good.  I just need to extract it instead of removeing it.  I'll do this by putting the who match in a capture group.
+This also appears to be working good.  I just need to extract it instead of removeing it.  I'll do this by specifying the first capture group match..
 
 (T[0-9]{4}(\.[0-9]{3})?)$
 ```
